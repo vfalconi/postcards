@@ -1,0 +1,146 @@
+@import 'bourbon';
+@import 'animation';
+
+body {
+	background: #111 url(stars-tile2.png);
+	background-position: 0 0;
+	transition: background-position 5s ease-in;
+}
+
+.hidden {
+	background-position: 0 -500%;
+
+	.container,
+	.sign { @include transform(translateY(100%)); }
+}
+
+.container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: transform 5s ease-out;
+}
+
+.picture {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.house {
+	max-width: em(600);
+	width: 100%;
+	position: relative;
+	z-index: 20;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.grass {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 50%;
+	background: green;
+	z-index: 0;
+}
+
+.sign {
+	position: relative;
+	display: block;
+	margin-right: auto;
+	margin-bottom: em(-30);
+	margin-left: auto;
+	width: 50%;
+	max-width: em(300);
+	z-index: 10;
+	transition: transform 1.5s cubic-bezier(.87,-.41,.19,1.44) 5s;
+}
+
+
+
+
+
+.stars {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.animated-stars {
+	width: 90%;
+	max-width: em(1000);
+	margin-top: em(20);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: visible;
+}
+
+.star {	@include transform-origin(center center); }
+
+.star-1,
+.star-7 { @include animation(star-scale2 8.0s ease-in infinite, star-color2 4.0s ease-in infinite); }
+
+.star-2,
+.star-16 { @include animation(star-color1 1.0s ease-in infinite, star-scale3 3.0s ease-in infinite); }
+
+.star-3,
+.star-9 { @include animation(star-twirl1 10.0s ease-in infinite); }
+
+.star-4,
+.star-8 { @include animation(star-scale1 5.0s ease-in infinite, star-color2 10.0s ease-in infinite); }
+
+.star-5,
+.star-10 { @include animation(star-scale-and-twirl1 6.0s ease-in infinite, star-color1 3.0s ease-in infinite); }
+
+.star-6,
+.star-15 { @include animation(star-color2 8.0s ease-in infinite, star-blink2 4.0s ease-in infinite); }
+
+.star-12,
+.star-14 { @include animation(star-scale2 4.0s ease-in infinite 6.0s, star-color2 1.0s ease-in infinite); }
+
+.star-13,
+.star-11 { @include animation(star-color2 2.0s ease-in infinite, star-blink2 6.0s ease-in infinite); }
+
+
+
+
+
+.button { transition: transform 1s ease-in 1s; }
+
+.button-icon {
+	display: block;
+	margin-top: em(30);
+	margin-right: auto;
+	margin-left: auto;
+	max-width: em(200);
+	overflow: visible;
+	@include animation(pulse 2.0s ease-in infinite);
+}
+
+.button-icon-circle,
+.button-icon-snowflake {
+	@include transform-origin(center center);
+	transition: transform .5s ease-in;
+}
+
+.button-clicked {
+	@include transform(translateY(-400%));
+
+	.button-icon-circle {
+		@include transform(scale(0));
+	}
+
+	.button-icon-snowflake {
+		@include transform(scale(2));
+		@include animation(spin .5s ease-in infinite);
+	}
+
+}

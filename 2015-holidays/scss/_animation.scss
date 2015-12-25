@@ -1,0 +1,87 @@
+@include keyframes(background) {
+	0% { background-position: 0 -400%; }
+	100% { background-position: 0 0; }
+}
+
+@include keyframes(spin) {
+	0% { @include transform(rotate(0)); }
+	100% { @include transform(rotate(3600deg)); }
+}
+
+@include keyframes(pulse) {
+	0% { @include transform(scale(1)); }
+	50% { @include transform(scale(1.25)); }
+	100% { @include transform(scale(1)); }
+}
+
+@include keyframes(star-scale1) {
+	0% { @include transform(scale(1)); }
+	50% { @include transform(scale(.25)); }
+	100% { @include transform(scale(1)); }
+}
+
+@include keyframes(star-scale2) {
+	0% { @include transform(scale(1)); }
+	50% { @include transform(scale(1.5)); }
+	100% { @include transform(scale(1)); }
+}
+
+@include keyframes(star-scale3) {
+	0% { @include transform(scale(1)); }
+	50% { @include transform(scale(.5)); }
+	100% { @include transform(scale(1)); }
+}
+
+@include keyframes(star-twirl1) {
+	0% { @include transform(rotate(0deg)); }
+	50% { @include transform(rotate(80deg)); }
+	100% { @include transform(rotate(0deg)); }
+}
+
+@include keyframes(star-twirl2) {
+	0% { @include transform(rotate(0deg)); }
+	50% { @include transform(rotate(-45deg)); }
+	100% { @include transform(rotate(0deg)); }
+}
+
+@include keyframes(star-scale-and-twirl1) {
+	0% { @include transform(scale(1) rotate(0deg)); }
+	50% { @include transform(scale(1.25) rotate(90deg)); }
+	100% { @include transform(scale(1) rotate(0deg)); }
+}
+
+@include keyframes(star-scale-and-twirl2) {
+	0% { @include transform(scale(1) rotate(0deg)); }
+	50% { @include transform(scale(.5) rotate(180deg)); }
+	100% { @include transform(scale(1) rotate(0deg)); }
+}
+
+@include keyframes(star-blink1) {
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@include keyframes(star-blink2) {
+	0% { opacity: 0.5; }
+	50% { opacity: 1; }
+	100% { opacity: 0.5; }
+}
+
+@include keyframes(star-blink3) {
+	0% { opacity: 1; }
+	50% { opacity: .25; }
+	100% { opacity: 1; }
+}
+
+@include keyframes(star-color1) {
+	0% { fill: #FFC639; }
+	50% { fill: #ef9300; }
+	100% { fill: #FFC639; }
+}
+
+@include keyframes(star-color2) {
+	0% { fill: #FFC639; }
+	50% { fill: #ffe7b3; }
+	100% { fill: #FFC639; }
+}
